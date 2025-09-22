@@ -7,7 +7,6 @@ import javax.swing.SwingUtilities;
 public class MainApplication {
 
     public static void main(String[] args) {
-        // Use invokeLater to ensure GUI creation is done on the EDT
         SwingUtilities.invokeLater(() -> {
             MainFrame mainFrame = new MainFrame();
             mainFrame.setVisible(true);
