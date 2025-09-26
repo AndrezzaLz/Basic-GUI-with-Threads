@@ -1,4 +1,6 @@
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,8 +21,14 @@ public class HelpDialog extends JDialog {
     public HelpDialog(JFrame parent) {
         super(parent, "Ajuda", true);
 
-        ImageIcon helpIcon = new ImageIcon(getClass().getResource("/help-icon.png"));
-        JLabel imageLabel = new JLabel(helpIcon);
+        ImageIcon helpIcon = new ImageIcon(getClass().getResource("images/help-icon.png"));
+
+        // Redimensiona a imagem para caber no diálogo (ex: 100x100 px)
+        Image scaledImage = helpIcon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+
+        JLabel imageLabel = new JLabel(scaledIcon);
         imageLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         String helpText = """

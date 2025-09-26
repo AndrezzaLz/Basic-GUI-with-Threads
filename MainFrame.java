@@ -153,8 +153,9 @@ public class MainFrame extends JFrame {
 
     private void showAboutDialog() {
         String aboutMessage = "Aplicação: Basic GUI with Threads\n" +
-                              "Versão: 2025.a\n" +
-                              "Autores: Andrezza L. Z.";
+                              "Versão: 2025\n" +
+                              "Autores:\n" + 
+                              "Andrezza L. Z.\nSidinei Junior\nAdriano De Jesus\nMirella Dos Santos\nDandara Melissa\nYasmin Inoue";
         JOptionPane.showMessageDialog(this, aboutMessage, "Sobre", JOptionPane.INFORMATION_MESSAGE);
     }
 
