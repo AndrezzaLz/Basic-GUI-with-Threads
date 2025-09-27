@@ -180,7 +180,7 @@ public class MainFrame extends JFrame {
     }
 
     private void changeColorMode() {
-        Object[] options = {"Aleatório", "Tons de Azul", "Tons de Verde", "Escala de Cinza"};
+        Object[] options = {"Aleatório", "Tons de Azul", "Tons de Verde", "Escala de Cinza", "Tons de Rosa"};
         int choice = JOptionPane.showOptionDialog(this,
             "Escolha o esquema de cores:",
             "Mudar Cores",
@@ -195,6 +195,8 @@ public class MainFrame extends JFrame {
             case 1 -> backgroundPanel.setColorMode(AnimatedBackgroundPanel.ColorMode.BLUES);
             case 2 -> backgroundPanel.setColorMode(AnimatedBackgroundPanel.ColorMode.GREENS);
             case 3 -> backgroundPanel.setColorMode(AnimatedBackgroundPanel.ColorMode.GRAYSCALE);
+            case 4 -> backgroundPanel.setColorMode(AnimatedBackgroundPanel.ColorMode.PINK);
+
         }
     }
 
