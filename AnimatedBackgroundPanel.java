@@ -19,7 +19,7 @@ public class AnimatedBackgroundPanel extends JPanel implements Runnable {
 
     // Enum for different color modes
     public enum ColorMode {
-        RANDOM, BLUES, GREENS, GRAYSCALE
+        RANDOM, BLUES, GREENS, GRAYSCALE, PINK
     }
 
     // Enum for different drawing patterns
@@ -76,8 +76,10 @@ public class AnimatedBackgroundPanel extends JPanel implements Runnable {
                 int gray = random.nextInt(256);
                 yield new Color(gray, gray, gray);
             }
+            case PINK -> new Color(255, 170 + random.nextInt(40), 180 + random.nextInt(40)
+            );
         };
-    }
+    }   
 
     @Override
     protected void paintComponent(Graphics g) {
