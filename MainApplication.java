@@ -1,9 +1,5 @@
 import javax.swing.SwingUtilities;
 
-/**
- * Main class to launch the application.
- * Ensures the GUI is created on the Event Dispatch Thread (EDT).
- */
 public class MainApplication {
 
     public static void main(String[] args) {
