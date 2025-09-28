@@ -6,23 +6,15 @@ import java.util.List;
 import java.util.Random;
 import javax.swing.JPanel;
 
-/**
- * A custom panel with a dynamic, animated background that runs on a separate thread.
- * Now includes controls for speed, color schemes, and drawing patterns.
- */
 public class AnimatedBackgroundPanel extends JPanel implements Runnable {
-
-    // Animation control flags and variables
     private volatile boolean running = false;
     private Thread animationThread;
-    private int animationDelay = 500; // Default speed: 500ms
+    private int animationDelay = 500; 
 
-    // Enum for different color modes
     public enum ColorMode {
         RANDOM, BLUES, GREENS, GRAYSCALE, PINK
     }
 
-    // Enum for different drawing patterns
     public enum DrawPattern {
         SOLID_FILL, CIRCLES
     }
@@ -31,8 +23,6 @@ public class AnimatedBackgroundPanel extends JPanel implements Runnable {
     private DrawPattern currentDrawPattern = DrawPattern.SOLID_FILL;
     private final Random random = new Random();
     private final List<Circle> circles = new ArrayList<>();
-
-    // A simple record to hold circle data
     private record Circle(int x, int y, int radius, Color color) {}
 
     @Override
@@ -49,14 +39,12 @@ public class AnimatedBackgroundPanel extends JPanel implements Runnable {
             }
         }
     }
-
+    
     private void updateAnimationState() {
         if (currentDrawPattern == DrawPattern.SOLID_FILL) {
-            // For solid fill, we just need one color for the whole panel
             Color newColor = generateColor();
             setBackground(newColor);
         } else if (currentDrawPattern == DrawPattern.CIRCLES) {
-            // For circles, we generate multiple objects
             circles.clear();
             for (int i = 0; i < 20; i++) {
                 int x = random.nextInt(getWidth());
@@ -108,18 +96,15 @@ public class AnimatedBackgroundPanel extends JPanel implements Runnable {
         }
     }
 
-    // --- Public setters for control from MainFrame ---
-
     public void setAnimationDelay(int delay) {
-        this.animationDelay = Math.max(50, delay); // Set a minimum delay of 50ms
-    }
+        this.animationDelay = Math.max(50, delay);
+    }     
 
     public void setColorMode(ColorMode mode) {
         this.currentColorMode = mode;
     }
 
     public void setDrawPattern(DrawPattern pattern) {
-        // When changing patterns, clear the old one
         if (this.currentDrawPattern == DrawPattern.CIRCLES) {
             circles.clear();
         }
