@@ -1,6 +1,5 @@
 import java.awt.Font;
 import java.awt.Image;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,10 +11,6 @@ import javax.swing.ImageIcon;
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
 
-/**
- * A custom dialog for displaying help information.
- * It includes an image, scrollable text, and a closing button.
- */
 public class HelpDialog extends JDialog {
 
     public HelpDialog(JFrame parent) {
@@ -23,7 +18,6 @@ public class HelpDialog extends JDialog {
 
         ImageIcon helpIcon = new ImageIcon(getClass().getResource("images/help-icon.png"));
 
-        // Redimensiona a imagem para caber no diálogo (ex: 100x100 px)
         Image scaledImage = helpIcon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
