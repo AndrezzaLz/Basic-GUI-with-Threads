@@ -15,10 +15,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
 import javax.swing.border.BevelBorder;
 
-/**
- * The main window (JFrame) of the application.
- * Sets up the GUI, menus, listeners, and integrates all components.
- */
 public class MainFrame extends JFrame {
 
     private JTextArea contentTextArea;
@@ -66,7 +62,6 @@ public class MainFrame extends JFrame {
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
 
-        // --- File Menu ---
         JMenu fileMenu = new JMenu("Arquivo");
         JMenuItem openFileItem = new JMenuItem("Abrir Arquivo");
         openFileItem.addActionListener(e -> openFile());
@@ -80,7 +75,6 @@ public class MainFrame extends JFrame {
         fileMenu.addSeparator();
         fileMenu.add(exitItem);
 
-        // --- Configuration Menu ---
         JMenu configMenu = new JMenu("Configuração");
         JMenuItem patternsItem = new JMenuItem("Padrões");
         patternsItem.addActionListener(e -> changeDrawPattern());
@@ -92,8 +86,7 @@ public class MainFrame extends JFrame {
         configMenu.add(patternsItem);
         configMenu.add(colorsItem);
         configMenu.add(speedItem);
-        
-        // --- Help Menu ---
+
         JMenu helpMenu = new JMenu("Ajuda");
         JMenuItem helpItem = new JMenuItem("Ajuda");
         helpItem.addActionListener(e -> showHelpDialog());
@@ -117,8 +110,6 @@ public class MainFrame extends JFrame {
             }
         });
     }
-
-    // --- Action Methods ---
 
     private void openFile() {
         int result = fileChooser.showOpenDialog(this);
@@ -159,7 +150,6 @@ public class MainFrame extends JFrame {
         JOptionPane.showMessageDialog(this, aboutMessage, "Sobre", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    // --- Configuration Action Methods ---
 
     private void changeDrawPattern() {
         Object[] options = {"Cor Sólida", "Círculos"};
